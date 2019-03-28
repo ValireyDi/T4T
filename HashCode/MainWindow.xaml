@@ -1,0 +1,68 @@
+﻿<Window x:Class="T4T.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:T4T"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="T4T"
+        Width="800"
+        Height="182"
+        mc:Ignorable="d">
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Stretch">
+            <TextBlock Text="Input" />
+            <TextBox Text="{Binding InputPath, Mode=TwoWay}" />
+        </StackPanel>
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                Margin="8"
+                Padding="4"
+                HorizontalAlignment="Right"
+                Click="ButtonSelectInput_Click"
+                Content="Browse" />
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                Margin="8"
+                Padding="4"
+                HorizontalAlignment="Right"
+                Click="ButtonOpenInputFolder_OnClick"
+                Content="Open" />
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Stretch">
+            <TextBlock Text="Output" />
+            <TextBox Text="{Binding OutputPath, Mode=TwoWay}" />
+        </StackPanel>
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Margin="8"
+                Click="ButtonSelectOutput_Click"
+                Padding="4"
+                HorizontalAlignment="Right"
+                Content="Browse" />
+
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Margin="8"
+                Padding="4"
+                HorizontalAlignment="Right"
+                Click="ButtonOpenOutputFolder_OnClick"
+                Content="Open" />
+
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,8,0,0"
+                Click="Button_Click"
+                Content="Go!" />
+    </Grid>
+</Window>
